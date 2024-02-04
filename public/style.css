@@ -1,0 +1,128 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "KaiTi", "楷体", sans-serif;
+  color: #333;
+  background-color: #f2f2f7;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  /* 改进布局，避免重叠 */
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  /* 居中 */
+}
+
+.left-panel {
+  flex: 6;
+  /* 设置左侧面板占据的比例为6 */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+  /* 调整间距以避免重叠 */
+}
+
+.right-panel {
+  display: flex;
+  /* 使用Flex布局 */
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+  flex-direction: column;
+  /* 子元素垂直排列 */
+  flex: 4;
+  /* 设置右侧面板占据的比例为4 */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+  height: 100%;
+  /* 根据需要调整高度 */
+}
+
+#character_display {
+  /* 根据需要为character_display添加样式，例如设置大小 */
+  width: 80%;
+  /* 或根据需要调整宽度 */
+  height: 80%;
+  /* 或根据需要调整高度，确保内容能够适当显示 */
+  /* 添加更多样式以美化或适应内容的展示 */
+}
+
+#text_input {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  font-size: 24px;
+  /* 增大文字大小 */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* 添加圆角 */
+  box-sizing: border-box;
+  /* 确保宽度包含padding */
+  margin-bottom: 20px;
+}
+
+/* 前面的样式保持不变，这里只展示新增或修改的部分 */
+
+#text_grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  /* 创建10列，确保每行10个格子 */
+  gap: 2px;
+  /* 格子之间的间隙 */
+  padding: 2px;
+  /* 网格内边距 */
+}
+
+.grid-cell {
+  border: 1px solid #eee;
+  /* 细边框 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  /* 文字大小 */
+  height: 34px;
+  /* 固定高度，确保格子即使没有内容时也保持形状 */
+  aspect-ratio: 1;
+  /* 保持宽高比为1:1，使每个格子都是正方形 */
+}
+
+/* 清空按钮样式 */
+#clear_button {
+  position: relative;
+  float: right;
+  /* 使按钮靠右浮动 */
+  margin-top: -55px;
+  /* 根据text_input的高度调整 */
+  margin-right: 10px;
+  /* 与输入框的距离 */
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  background-color: #007aff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#clear_button:hover {
+  background-color: #005ecb;
+}

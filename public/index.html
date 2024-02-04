@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HanziPen</title>
+  <link rel="stylesheet" href="style.css"> <!-- 引入CSS样式 -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div class="header">
+    <h1>HanziPen</h1>
+    <p>帮助孩子学会写汉字</p>
+  </div>
+  <div class="container">
+    <div class="left-panel">
+      <textarea id="text_input" placeholder="在此输入汉字..."></textarea>
+      <button id="clear_button">清空</button>
+      <div id="text_grid"></div>
+    </div>
+    <div class="right-panel">
+      <div id="character_display"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js" defer></script> <!-- 引入hanzi-writer库 -->
+  <script src="script.js" defer></script> <!-- 引入JavaScript逻辑 -->
+</body>
+
+</html>
