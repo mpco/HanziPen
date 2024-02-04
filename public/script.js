@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // 初始化10x10网格
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 50; i++) {
     const cell = document.createElement('div');
     cell.classList.add('grid-cell');
     // 为每个格子添加点击事件，显示笔画（确保displayCharacterAnimation函数已定义）
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cells.forEach(cell => cell.textContent = ''); // 清空网格内容
     const chars = textInput.value.split('').filter(char => char.match(/^[\u4e00-\u9fa5，。？！]$/));
     chars.forEach((char, index) => {
-      if (index < 100) cells[index].textContent = char;
+      if (index < 50) cells[index].textContent = char;
     });
   }
 
