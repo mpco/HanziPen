@@ -60,6 +60,7 @@ h1 {
   /* 根据需要调整高度 */
 }
 
+
 #character_display {
   /* 根据需要为character_display添加样式，例如设置大小 */
   width: 80%;
@@ -130,4 +131,34 @@ h1 {
 
 #clear_button:hover {
   background-color: #005ecb;
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .right-panel {
+    margin-top: 5px;
+    order: 1;
+  }
+
+  #text_grid {
+    grid-template-columns: repeat(8, 1fr); /* 8 grid items per row for mobile devices */
+  }
+
+  #character_display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+  }
+
+  #character_display svg {
+    max-width: 100%; /* Ensure the SVG scales down if it's too large */
+    height: auto;
+  }
 }

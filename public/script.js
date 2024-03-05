@@ -48,9 +48,13 @@ document.addEventListener('DOMContentLoaded', function () {
       padding: 5
     });
   }
+
   resetCharacterDisplay();
   // 显示汉字笔画动画的函数
   function displayCharacterAnimation(char) {
+
+    speakCharacter(char);
+
     characterDisplay.innerHTML = ''; // 清空当前展示的汉字
     HanziWriter.create(characterDisplay, char, {
       width: 300,
@@ -63,3 +67,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }).loopCharacterAnimation();
   }
 });
+
+// Function to speak the character using Web Speech API
+function speakCharacter(character) {
+  const utterance = new SpeechSynthesisUtterance(character);
+  speechSynthesis.speak(utterance);
+}
