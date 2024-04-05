@@ -58,13 +58,48 @@ document.addEventListener('DOMContentLoaded', function () {
     const pinyin_initial = pinyin(char, { pattern: 'initial' });
     const pinyin_initial_char = pinyin(char, { toneType: 'none', pattern: 'initial' });
     const pinyin_final = pinyin(char, { pattern: 'final' });
-    const pinyin_final_char = pinyin(char, { toneType: 'none', pattern: 'final' });
+    let pinyin_final_char = pinyin(char, { toneType: 'none', pattern: 'final' });
+    if (pinyin_final_char == 'ü') { pinyin_final_char = "v"; }
+    // 清空 #pinyin 的子节点
+    const pinyinDiv = document.getElementById('pinyin');
+    pinyinDiv.innerHTML = '';
 
-    document.getElementById('pinyin_initial').innerText = pinyin_initial;
-    document.getElementById('pinyin_initial_upper').innerText = pinyin_initial_char.toUpperCase();
-    document.getElementById('pinyin_final').innerText = pinyin_final;
-    document.getElementById('pinyin_final_upper').innerText = pinyin_final_char.toUpperCase();
-    
+    const pinyin_initial_node = document.createElement('span');
+    pinyin_initial_node.id = 'pinyin_initial';
+    pinyin_initial_node.textContent = pinyin_initial;
+    pinyinDiv.appendChild(pinyin_initial_node);
+
+    const pinyin_final_node = document.createElement('span');
+    pinyin_final_node.id = 'pinyin_final';
+    pinyin_final_node.textContent = pinyin_final;
+    pinyinDiv.appendChild(pinyin_final_node);
+
+    const pinyin_initial_upper_node = document.createElement('span');
+    pinyin_initial_upper_node.id = 'pinyin_initial_upper';
+    pinyin_initial_upper_node.textContent = pinyin_initial_char.toUpperCase();
+    pinyinDiv.appendChild(pinyin_initial_upper_node);
+
+    const pinyin_final_upper_node = document.createElement('span');
+    pinyin_final_upper_node.id = 'pinyin_final_upper';
+    pinyin_final_upper_node.textContent = pinyin_final_char.toUpperCase();
+    pinyinDiv.appendChild(pinyin_final_upper_node);
+
+    // 点击发音
+    document.getElementById('pinyin_initial').addEventListener('click', function () {
+      const audio = new Audio(`pronunciation/${pinyin_initial_char}.mp3`);
+      audio.play();
+    });
+    document.getElementById('pinyin_final').addEventListener('click', function () {
+      const audio = new Audio(`pronunciation/${pinyin_final_char}.mp3`);
+      audio.play();
+    });
+    document.getElementById('pinyin_initial_upper').addEventListener('click', function () {
+      speakCharacter(pinyin_initial_char);
+    });
+    document.getElementById('pinyin_final_upper').addEventListener('click', function () {
+      speakCharacter(pinyin_final_char);
+    });
+
   }
 
   resetCharacterDisplay();

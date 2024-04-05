@@ -64,6 +64,8 @@ h1 {
 #pinyin {
   font-size: 60px;
   font-family: "Times New Roman", serif;
+  /* 鼠标样式：手型 */
+  cursor: pointer;
 }
 
 #pinyin_initial,
@@ -76,6 +78,7 @@ h1 {
 #pinyin_final_upper
 {
   color: orange;
+  margin-left: 5px;
 }
 
 #pinyin_final {
@@ -89,6 +92,13 @@ h1 {
   height: 80%;
   /* 或根据需要调整高度，确保内容能够适当显示 */
   /* 添加更多样式以美化或适应内容的展示 */
+}
+
+
+/* #character_display 中的 svg 居中显示 */
+#character_display svg {
+  display: block;
+  margin: 0 auto;
 }
 
 #text_input {
@@ -118,6 +128,8 @@ h1 {
 }
 
 .grid-cell {
+  /* 鼠标样式：手型 */
+  cursor: pointer;
   border: 1px solid #eee;
   /* 细边框 */
   display: flex;
