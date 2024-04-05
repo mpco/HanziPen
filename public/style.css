@@ -61,6 +61,27 @@ h1 {
 }
 
 
+#pinyin {
+  font-size: 60px;
+  font-family: "Times New Roman", serif;
+}
+
+#pinyin_initial,
+#pinyin_initial_upper
+{
+  color: red;
+}
+
+#pinyin_final,
+#pinyin_final_upper
+{
+  color: orange;
+}
+
+#pinyin_final {
+  margin-right: 20px;
+}
+
 #character_display {
   /* 根据需要为character_display添加样式，例如设置大小 */
   width: 80%;
